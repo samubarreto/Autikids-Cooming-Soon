@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fce38a;
+  color: #333;
+}
+
+/* Header */
+.faq-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+/* ========================================
+   BOTÃO VOLTAR (Novo)
+======================================== */
+.back-btn {
+    position: absolute; /* Fixa no canto da tela */
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+    z-index: 10; /* Garante que fique acima de tudo */
+}
+
+.back-btn:hover {
+    color: #ffc300; /* Amarelo da marca */
+}
+
+/* Ajuste para celular: Mostra só a setinha para economizar espaço */
+@media (max-width: 600px) {
+    .back-btn span {
+        display: none;
+    }
+    .back-btn {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+.faq-logo {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.faq-section {
+  margin-bottom: 40px;
+}
+
+.faq-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* FAQ item */
+.faq-item {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ffe082;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px;
+  background: #ffc300;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 15px 0;
+  line-height: 1.6;
+}
+
+/* Footer */
+.faq-footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #ffc300;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .faq-question {
+    font-size: 15px;
+  }
+}
