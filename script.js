@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       carousel.addEventListener('mouseleave', () => {
-        autoSlide = setInterval(nextSlide, 4000);
+        autoSlide = setInterval(nextSlide, 2000);
       });
     }
   }
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Função para iniciar a rotação automática
   function startAutoRotate() {
-    autoRotateInterval = setInterval(nextMockup, 3500);
+    autoRotateInterval = setInterval(nextMockup, 2500);
   }
 
   // Função para parar a rotação automática
@@ -309,15 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const mockupCarousel = document.querySelector('.mockup-carousel');
     const carouselControls = document.querySelector('.carousel-controls');
     
-    if (mockupCarousel) {
-      mockupCarousel.addEventListener('mouseenter', stopAutoRotate);
-      mockupCarousel.addEventListener('mouseleave', startAutoRotate);
-    }
+    // if (mockupCarousel) {
+    //   mockupCarousel.addEventListener('mouseenter', stopAutoRotate);
+    //   mockupCarousel.addEventListener('mouseleave', startAutoRotate);
+    // }
     
-    if (carouselControls) {
-      carouselControls.addEventListener('mouseenter', stopAutoRotate);
-      carouselControls.addEventListener('mouseleave', startAutoRotate);
-    }
+    // if (carouselControls) {
+    //   carouselControls.addEventListener('mouseenter', stopAutoRotate);
+    //   carouselControls.addEventListener('mouseleave', startAutoRotate);
+    // }
 
     // Suporte a navegação por teclado (acessibilidade)
     document.addEventListener('keydown', (e) => {
