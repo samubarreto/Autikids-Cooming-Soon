@@ -120,7 +120,7 @@ const translations = {
     'media_2': 'Reconocimiento Científico',
     'media_3': 'Proyecto Premiado',
 
-    '_badge': ' Autikids llegará logo!',
+    '_badge': ' Autikids llegará pronto!',
     'pricing_title': 'Nuestros personajes están diseñados para ser amigables y acogedores, creando una experiencia inclusiva para todos los niños',
 
     'section_testi': 'Mira cómo Autikids está haciendo la diferencia 💛',
