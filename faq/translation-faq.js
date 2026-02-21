@@ -19,7 +19,7 @@ const translations = {
     faq_a_forgot: "Na tela de login, clique em 'Esqueci minha senha' e siga as instruções enviadas ao seu e-mail.",
     faq_sec_support: "Suporte",
     faq_q_contact: "Como falar com o suporte?",
-    faq_a_contact: "Entre em contato pelo e-mail: <strong>support@autikids.app</strong> ou pelo Instagram <a href='https://www.instagram.com/autikids_' rel='noopener' target='_blank'>@autikids_</a>",
+    faq_a_contact: "Entre em contato pelo e-mail: <strong>support@autikids.app</strong> ou pelo Instagram <a href='https://www.instagram.com/autikids_' rel='noopener noreferrer' target='_blank'>@autikids_</a>",
     faq_q_hours: "Qual o horário de atendimento?",
     faq_a_hours: "Nosso suporte funciona de segunda a sexta, das 8h às 18h (horário de Brasília).",
     footer_rights: `© ${currentYear} Autikids | Todos os direitos reservados`
@@ -43,7 +43,7 @@ const translations = {
     faq_a_forgot: "On the login screen, click 'Forgot my password' and follow the instructions sent to your email.",
     faq_sec_support: "Support",
     faq_q_contact: "How to contact support?",
-    faq_a_contact: "Contact us via email: <strong>support@autikids.app</strong> or through our Instagram <a href='https://www.instagram.com/autikids_' target='_blank'>@autikids_</a>",
+    faq_a_contact: "Contact us via email: <strong>support@autikids.app</strong> or through our Instagram <a href='https://www.instagram.com/autikids_' rel='noopener noreferrer' target='_blank'>@autikids_</a>",
     faq_q_hours: "What are the support hours?",
     faq_a_hours: "Our support is available Monday to Friday, from 8 AM to 6 PM (Brasília time).",
     footer_rights: `© ${currentYear} Autikids | All rights reserved`
@@ -66,7 +66,7 @@ const translations = {
     faq_a_forgot: "En la pantalla de inicio de sesión, haga clic en 'Olvidé mi contraseña' y siga las instrucciones enviadas a su correo electrónico.",
     faq_sec_support: "Soporte",
     faq_q_contact: "¿Cómo contactar al soporte?",
-    faq_a_contact: "Contáctenos por correo: <strong>support@autikids.app</strong> o por nuestro Instagram <a href='https://www.instagram.com/autikids_' target='_blank'>@autikids_</a>",
+    faq_a_contact: "Contáctenos por correo: <strong>support@autikids.app</strong> o por nuestro Instagram <a href='https://www.instagram.com/autikids_' rel='noopener noreferrer' target='_blank'>@autikids_</a>",
     faq_q_hours: "¿Cuál es el horario de atención?",
     faq_a_hours: "Nuestro soporte funciona de lunes a viernes, de 8h a 18h (horario de Brasilia).",
     footer_rights: `© ${currentYear} Autikids | Todos los derechos reservados`
