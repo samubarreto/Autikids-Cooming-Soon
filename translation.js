@@ -2,6 +2,8 @@
    SISTEMA DE TRADUÇÃO (PT / EN / ES)
 ======================================== */
 
+const currentYear = new Date().getFullYear();
+
 const translations = {
   // --- PORTUGUÊS (Padrão) ---
   'pt': {
@@ -47,7 +49,7 @@ const translations = {
     'footer_privacy': 'Política de Privacidade',
     'footer_cookies': 'Política de Cookies',
     'footer_social': 'Nossas redes sociais:',
-    'footer_rights': '© 2026 Autikids | Todos os direitos reservados'
+    'footer_rights': `© ${currentYear} Autikids | Todos os direitos reservados`
   },
 
   // --- INGLÊS ---
@@ -94,7 +96,7 @@ const translations = {
     'footer_privacy': 'Privacy Policy',
     'footer_cookies': 'Cookie Policy',
     'footer_social': 'Our social networks:',
-    'footer_rights': '© 2026 Autikids | All rights reserved'
+    'footer_rights': `© ${currentYear} Autikids | All rights reserved`
   },
 
   // --- ESPANHOL ---
@@ -139,7 +141,7 @@ const translations = {
     'footer_privacy': 'Política de Privacidad',
     'footer_cookies': 'Política de Cookies',
     'footer_social': 'Nuestras redes sociales:',
-    'footer_rights': '© 2026 Autikids | Todos los derechos reservados'
+    'footer_rights': `© ${currentYear} Autikids | Todos los derechos reservados`
   }
 };
 
