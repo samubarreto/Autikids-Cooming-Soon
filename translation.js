@@ -22,7 +22,7 @@ const translations = {
 
 
     '_badge': 'O Autikids está chegando!',
-    'pricing_tittle': 'Nossos personagens são desenhados para serem amigáveis e acolhedores, criando uma experiência inclusiva para todas as crianças',
+    'pricing_title': 'Nossos personagens são desenhados para serem amigáveis e acolhedores, criando uma experiência inclusiva para todas as crianças',
 
     
 
