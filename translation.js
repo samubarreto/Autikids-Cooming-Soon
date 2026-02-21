@@ -107,7 +107,7 @@ const translations = {
     'feature_1_title': 'Totalmente personalizable',
     'feature_1_desc': 'La aplicación se adapta al ritmo, intereses y necesidades de cada pequeño.',
     'feature_2_title': 'Entorno Seguro',
-    'feature_2_desc': 'Aqui prezamos pela experiência segura da criança. Por isso, nosso app é 100% livre de anúncios para os pequenos.',
+    'feature_2_desc': 'Aquí valoramos la experiencia segura del niño. Por eso, nuestra app es 100% libre de anuncios para los pequeños.',
     'feature_3_title': 'Facilita la comunicación',
     'feature_3_desc': 'Recursos de audio y tarjetas intuitivas para una comunicación sin barreras.',
     'feature_4_title': 'Alianza casa y escuela',
