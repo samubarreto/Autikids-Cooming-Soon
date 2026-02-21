@@ -1,3 +1,5 @@
+const currentYear = new Date().getFullYear();
+
 const translations = {
   pt: {
     btn_back: "Voltar",
@@ -27,7 +29,7 @@ const translations = {
     faq_a_contact: "Entre em contato pelo e-mail: <strong>suporte@autikids.com</strong> ou pelo nosso Instagram oficial.",
     faq_q_hours: "Qual o horário de atendimento?",
     faq_a_hours: "Nosso suporte funciona de segunda a sexta, das 8h às 18h (horário de Brasília).",
-    footer_rights: "© 2025 Autikids | Todos os direitos reservados"
+    footer_rights: `© ${currentYear} Autikids | Todos os direitos reservados`
   },
   en: {
     btn_back: "Back",
@@ -57,7 +59,7 @@ const translations = {
     faq_a_contact: "Contact us via email: <strong>suporte@autikids.com</strong> or through our official Instagram.",
     faq_q_hours: "What are the support hours?",
     faq_a_hours: "Our support is available Monday to Friday, from 8 AM to 6 PM (Brasília time).",
-    footer_rights: "© 2025 Autikids | All rights reserved"
+    footer_rights: `© ${currentYear} Autikids | All rights reserved`
   },
   es: {
     btn_back: "Volver",
@@ -87,7 +89,7 @@ const translations = {
     faq_a_contact: "Contáctenos por correo: <strong>suporte@autikids.com</strong> o por nuestro Instagram oficial.",
     faq_q_hours: "¿Cuál es el horario de atención?",
     faq_a_hours: "Nuestro soporte funciona de lunes a viernes, de 8h a 18h (horario de Brasilia).",
-    footer_rights: "© 2025 Autikids | Todos los derechos reservados"
+    footer_rights: `© ${currentYear} Autikids | Todos los derechos reservados`
   }
 };
 

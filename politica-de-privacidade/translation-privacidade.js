@@ -1,3 +1,5 @@
+const currentYear = new Date().getFullYear();
+
 const translations = {
     pt: {
       btn_back: "Voltar",
@@ -17,7 +19,7 @@ const translations = {
       sec_6_text: "Os pais ou responsáveis têm o direito de revisar, solicitar a exclusão ou recusar a coleta futura de informações de seus filhos a qualquer momento, entrando em contato conosco.",
       sec_7_title: "7. Contato",
       sec_7_text: "Se tiver dúvidas sobre nossa política de privacidade, entre em contato pelo e-mail: privacidade@autikids.com",
-      footer_rights: "© 2025 Autikids | Todos os direitos reservados"
+      footer_rights: `© ${currentYear} Autikids | Todos os direitos reservados`
     },
     en: {
       btn_back: "Back",
@@ -37,7 +39,7 @@ const translations = {
       sec_6_text: "Parents or guardians have the right to review, request deletion, or refuse future collection of their children's information at any time by contacting us.",
       sec_7_title: "7. Contact",
       sec_7_text: "If you have questions about our privacy policy, contact us via email: privacidade@autikids.com",
-      footer_rights: "© 2025 Autikids | All rights reserved"
+      footer_rights: `© ${currentYear} Autikids | All rights reserved`
     },
     es: {
       btn_back: "Volver",
@@ -57,7 +59,7 @@ const translations = {
       sec_6_text: "Los padres o tutores tienen derecho a revisar, solicitar la eliminación o rechazar la recopilación futura de información de sus hijos en cualquier momento, contactándonos.",
       sec_7_title: "7. Contacto",
       sec_7_text: "Si tiene dudas sobre nuestra política de privacidad, contáctenos por correo: privacidad@autikids.com",
-      footer_rights: "© 2025 Autikids | Todos los derechos reservados"
+      footer_rights: `© ${currentYear} Autikids | Todos los derechos reservados`
     }
   };
   
