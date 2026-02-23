@@ -1,411 +1,366 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Samuel Pereira Barreto">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description"
-    content="A high-tech augmentative communication app designed to empower children on the autism spectrum and support their inclusion in everyday life — coming soon.">
-  <meta property="og:image" content="https://www.autikids.app/assets/logo.png">
-  <meta property="og:image:width" content="128">
-  <meta property="og:image:height" content="128">
-  <meta property="og:image:alt" content="Open on your Browser">
-
+    content="Autikids - Aplicativo para transformar a comunicação de crianças Neurodivergentes em uma experiência divertida e educativa.">
+  <meta name="theme-color" content="#FFC107">
   <title>Autikids</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="assets/favicon.png" type="image/png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffe082;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: #ffffff;
-      border-radius: 50%;
-      animation: twinkle 3s infinite;
-      opacity: 0;
-    }
-
-    @keyframes twinkle {
-
-      0%,
-      100% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .container {
-      text-align: center;
-      z-index: 1;
-      animation: fadeIn 1s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .logo {
-      max-width: 360px;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 10px 20px rgba(255, 215, 0, 0.3));
-      margin-bottom: 16px;
-    }
-
-    .message {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .message-text {
-      background-color: white;
-      border-radius: 16px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #333;
-      letter-spacing: 1px;
-      padding: 8px 24px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      transition: box-shadow 0.3s ease-in-out;
-      cursor: default;
-    }
-
-    .message-text:hover {
-      box-shadow: 0 4px 12px rgba(255, 255, 255, .5);
-    }
-
-    .flag-img {
-      width: 28px;
-      height: 22px;
-      object-fit: cover;
-      vertical-align: middle;
-      margin-right: 10px;
-      border-radius: 4px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    }
-
-    #langWrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      will-change: opacity, transform;
-      opacity: 1;
-      transform: translateY(0) translateZ(0);
-      transition: opacity 600ms cubic-bezier(.2, .9, .3, 1), transform 600ms cubic-bezier(.2, .9, .3, 1);
-    }
-
-    #langWrap.lang-out {
-      opacity: 0;
-      transform: translateY(20px) scale(0.98);
-    }
-
-    #langWrap .flag-img,
-    #langWrap #langText {
-      transition: all .5s ease;
-      will-change: opacity, transform;
-    }
-
-    #langWrap.lang-out .flag-img,
-    #langWrap.lang-out #langText {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-
-    .heart {
-      display: inline-block;
-      animation: heartbeat 1.5s ease-in-out infinite;
-      padding-bottom: 2px;
-      /* border: red 1px solid; */
-      align-content: center;
-      align-self: center;
-    }
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      25% {
-        transform: scale(1.2);
-      }
-
-      50% {
-        transform: scale(1);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .logo {
-        max-width: 280px;
-      }
-
-      .message {
-        font-size: 1rem;
-      }
-
-      .message-text {
-        font-size: 1.1rem;
-        padding: 6px 18px;
-      }
-    }
-
-    .social-group {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .social-group span {
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #fff;
-    }
-
-    .social-links a:hover {
-      box-shadow: 0 4px 12px rgba(255, 255, 255, .2);
-      transform: scale(1.05);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-    }
-
-    .social-links a {
-      transition: all .15s ease;
-      width: 36px;
-      height: 36px;
-      background: #fff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Click effect */
-    .click-effect {
-      position: absolute;
-      pointer-events: none;
-      width: 80px;
-      height: 80px;
-      margin-left: -40px;
-      margin-top: -40px;
-      border-radius: 50%;
-      background: #fff;
-      transform: scale(0.2);
-      opacity: 0.95;
-      mix-blend-mode: screen;
-      animation: click-pop 700ms cubic-bezier(.2, .9, .3, 1);
-      z-index: 11111111111111111;
-    }
-
-    @keyframes click-pop {
-      0% {
-        transform: scale(0.2);
-        opacity: 0.95;
-      }
-
-      50% {
-        transform: scale(.6);
-        opacity: 0.8;
-      }
-
-      100% {
-        transform: scale(.8);
-        opacity: 0;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="stars" id="stars"></div>
 
-  <div class="container">
-    <img class="logo" src="assets/logo.png" alt="Autikids logo" />
+  <header class="top-flags">
+    <div class="language-selector">
 
-    <div class="message">
-      <p class="message-text">
-        <span id="langWrap">
-          <img id="langFlag" class="flag-img" alt="pt flag" aria-hidden="true">
-          <span id="langText"></span>
-        </span>
-        <span class="heart">💛</span>
-      </p>
+      <img src="assets/icon-Autikids.png" alt="Icon Autikids" class="top-icon" />
+
+      <div class="language-container-wrapper" style="position: relative;">
+        <button class="language-trigger" id="langTrigger">
+          <img id="currentFlag" src="assets/brasil.png" alt="Idioma atual">
+          <span id="currentLang">Português</span>
+          <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4.5 6L8 9.5L11.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+          </svg>
+        </button>
+
+        <div class="language-dropdown" id="langDropdown">
+          <div class="language-grid">
+            <!-- Opção Português -->
+            <button class="language-option" data-lang="pt" data-name="Português">
+              <img src="assets/brasil.png" alt="Brasil">
+              <span>Português</span>
+            </button>
+
+            <!-- Opção Inglês -->
+            <button class="language-option" data-lang="en" data-name="English">
+              <img src="assets/eua.png" alt="Estados Unidos">
+              <span>English</span>
+            </button>
+
+            <!-- Opção Espanhol -->
+            <button class="language-option" data-lang="es" data-name="Español">
+              <img src="assets/espanha.png" alt="Espanha">
+              <span>Español</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
     </div>
+  </header>
 
-    <div class="social-group">
-      <div class="social-links">
-        <a href="https://instagram.com/autikids_" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
-            </path>
-          </svg>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1 data-i18n="hero_title">
+          <span class="highlight">Comunicar, aprender</span> e se<br />
+          <span class="highlight">divertir</span> — tudo em um <br>
+          aplicativo seguro!
+        </h1>
+
+        <p class="lead" data-i18n="hero_desc">
+          Porque criança merece se comunicar com alegria — e nós estamos aqui para tornar essa experiência única
+        </p>
+
+        <a class="btn primary btn-download" href="#comming-soon">
+          <img src="assets/icon-Autikids.png" alt="Logo Autikids" class="btn-icon">
+          <div class="btn-text">
+            <div class="app-name">Autikids</div>
+            <div class="app-cta" data-i18n="btn_download"></div>
+          </div>
         </a>
-        <a href="https://www.youtube.com/@Autikids" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107">
-            <path
-              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-          </svg>
-        </a>
+      </div>
+
+      <div class="hero-right">
+        <div class="logo-card">
+          <img src="assets/LogoAutikids.png" alt="Logo Autikids" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="why">
+      <h2 class="section-title" data-i18n="section_why">Por que Autikids?</h2>
+      <div class="features">
+
+        <article class="feature">
+          <div class="icon">
+            <img src="assets/ilustracao2.png" alt="Icone Personalizável">
+          </div>
+          <div class="feature-content">
+            <h3 data-i18n="feature_1_title">Totalmente personalizável</h3>
+            <p data-i18n="feature_1_desc">O app se molda ao ritmo, interesses e necessidades de cada pequeno.</p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="icon">
+            <img src="assets/segurança.png " width="80px" alt="Icone Ambiente Seguro">
+          </div>
+          <div class="feature-content">
+            <h3 data-i18n="feature_2_title">Ambiente Seguro</h3>
+            <p data-i18n="feature_2_desc">Aqui prezamos pela experiência segura da criança. Por isso, nosso app é 100% livre de anúncios para os pequenos.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="icon">
+            <img src="assets/ilustração.png" alt="Icone Comunicação">
+          </div>
+          <div class="feature-content">
+            <h3 data-i18n="feature_3_title">Facilita a comunicação</h3>
+            <p data-i18n="feature_3_desc">Recursos de áudio e cards intuitivos para uma comunicação sem barreiras.</p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="icon">
+            <img src="assets/icone_ajuda.png" alt="Icone Parceria">
+          </div>
+          <div class="feature-content">
+            <h3 data-i18n="feature_4_title">Parceria entre casa e escola</h3>
+            <p data-i18n="feature_4_desc">Conecta pais e educadores para alinhar o desenvolvimento da criança.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO AUTIKIDS ESTÁ CHEGANDO -->
+    <section id="comming-soon" class="pricing">
+      <div class="pricing-inner">
+        <div class="pricing-left">
+          <div class="coming-soon-badge" data-i18n="_badge">
+            O Autikids está chegando!
+          </div>
+          <h3 data-i18n="pricing_title">Nossos personagens são desenhados para serem amigáveis e acolhedores, criando uma experiência inclusiva para todas as crianças.</h3>
+        </div>
+
+        <div class="pricing-right">
+          <div class="mockup-carousel">
+            <!-- Slide 1 -->
+            <div class="mockup-slide" data-index="0">
+              <img src="assets/personagem.png" alt="Personagem 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="mockup-slide" data-index="1">
+              <img src="assets/personagem2.png" alt="Personagem 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="mockup-slide" data-index="2">
+              <img src="assets/personagem3.png" alt="Personagem 3">
+            </div>
+            <!-- Slide 4 -->
+            <div class="mockup-slide" data-index="3">
+              <img src="assets/personagem4.png" alt="Personagem 4">
+            </div>
+            <!-- Slide 5 -->
+            <div class="mockup-slide" data-index="4">
+              <img src="assets/personagem5.png" alt="Personagem 5">
+            </div>
+            <!-- Slide 6 -->
+            <div class="mockup-slide" data-index="5">
+              <img src="assets/personagem6.png" alt="Personagem 6">
+            </div>
+          </div>
+
+          <!-- Controles de navegação -->
+          <!-- <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" aria-label="Anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="carousel-btn next-btn" aria-label="Próximo">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div> -->
+
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <span class="carousel-indicator active" data-index="0"></span>
+            <span class="carousel-indicator" data-index="1"></span>
+            <span class="carousel-indicator" data-index="2"></span>
+            <span class="carousel-indicator" data-index="3"></span>
+            <span class="carousel-indicator" data-index="4"></span>
+            <span class="carousel-indicator" data-index="5"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="media">
+      <h2 class="section-title" data-i18n="section_media">#Autikids na mídia</h2>
+      <div class="media-items">
+        <div class="media-item">
+          <a href="https://www.visaonoticias.com/noticia/projeto-de-academicos-do-univem-transforma-a-comunicacao-para-criancas-no-espectro-autista-57443"
+            target="_blank" rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="assets/integrantes.png" alt="Destaque em Evento">
+            </div>
+            <p data-i18n="media_1">Destaque em Evento</p>
+          </a>
+        </div>
+        <div class="media-item">
+          <a href="https://revista.univem.edu.br/REGRAD/article/view/3767" target="_blank" rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="assets/regrad.png" alt="Reconhecimento Científico">
+            </div>
+            <p data-i18n="media_2">Reconhecimento Científico</p>
+          </a>
+        </div>
+        <div class="media-item">
+          <a href="https://www.youtube.com/@Autikids" target="_blank" rel="noopener noreferrer">
+            <div class="media-thumb">
+              <img src="assets/certificado_univem.jpeg" alt="Projeto Premiado" style="height: 100%; width: 500px;">
+            </div>
+            <p data-i18n="media_3">Projeto Premiado</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+   <!--  <section class="testimonials">
+      <h2 class="section-title" data-i18n="section_testi">Veja como o Autikids está fazendo a diferença 💛</h2>
+      <div class="testimonials-carousel">
+        <div class="testi-slides">
+
+          <div class="testi-slide active">
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_1">"O app nos ajudou a estabelecer uma rotina educacional em casa. Meu
+                  filho melhorou muito."</blockquote>
+                <cite>Everton Marques</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_2">"Muitas atividades com reforço positivo — crianças adoram."</blockquote>
+                <cite>Fernanda Batista</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_3">"Ferramenta excelente para professores e familiares."</blockquote>
+                <cite>Emily Renata</cite>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_4">"Minha filha está se comunicando melhor a cada dia. Muito obrigada!"
+                </blockquote>
+                <cite>Maria Silva</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_5">"Interface intuitiva e cheia de recursos úteis para o dia a dia."
+                </blockquote>
+                <cite>João Santos</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_6">"Recomendo para todas as famílias. Mudou nossa vida!"</blockquote>
+                <cite>Ana Paula</cite>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-slide">
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_7">"Trabalho com autismo há 10 anos e esse é o melhor app que já vi."
+                </blockquote>
+                <cite>Dr. Carlos Mendes</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_8">"As atividades são muito bem pensadas e educativas."</blockquote>
+                <cite>Professora Juliana</cite>
+              </div>
+            </div>
+            <div class="testi">
+              <div class="testi-content">
+                <blockquote data-i18n="testi_9">"Meu neto adora usar o app todos os dias!"</blockquote>
+                <cite>Vovó Regina</cite>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-inner">
+
+        <div class="brand">
+          <div class="logo">
+            <img src="assets/LogoAutikids.png" alt="Logo Autikids">
+          </div>
+        </div>
+
+        <nav class="footer-links">
+          <a href="faq/faq.html" data-i18n="footer_help">Central de Ajuda</a>
+          <a href="termos-de-uso/termos.html" data-i18n="footer_terms">Termos de Uso</a>
+          <a href="politica-de-privacidade/privacidade.html" data-i18n="footer_privacy">Política de Privacidade</a>
+        </nav>
+
+        <div class="footer-right-group">
+          <div class="social-group">
+            <span data-i18n="footer_social">Nossas redes sociais:</span>
+            <div class="social-links">
+              <a href="https://instagram.com/autikids_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                  </path>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/@Autikids" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-  </div>
-
-  <script>
-    const starsContainer = document.getElementById('stars');
-
-    function createStar() {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 3 + 's';
-      star.style.animationDuration = (Math.random() * 2 + 2) + 's';
-      starsContainer.appendChild(star);
-
-      setTimeout(() => {
-        star.remove();
-      }, 5000);
-    }
-
-    setInterval(createStar, 20);
-
-    for (let i = 0; i < 20; i++) {
-      setTimeout(createStar, i * 150);
-    }
-  </script>
-
-  <script>
-    (function () {
-      function createClickEffect(x, y) {
-        const size = Math.max(window.innerWidth, window.innerHeight) * 0.08;
-        const el = document.createElement('div');
-        el.className = 'click-effect';
-        el.style.width = size + 'px';
-        el.style.height = size + 'px';
-        el.style.left = x + 'px';
-        el.style.top = y + 'px';
-        el.style.marginLeft = -(size / 2) + 'px';
-        el.style.marginTop = -(size / 2) + 'px';
-        document.body.appendChild(el);
-        el.addEventListener('animationend', function () { el.remove(); });
-        // fallback remove in case animationend doesn't fire
-        setTimeout(() => { if (el.parentNode) el.remove(); }, 900);
-      }
-
-      document.addEventListener('mousedown', function (e) {
-        createClickEffect(e.clientX, e.clientY);
-      }, { passive: true });
-
-      document.addEventListener('touchstart', function (e) {
-        const t = e.touches && e.touches[0];
-        if (t) createClickEffect(t.clientX, t.clientY);
-      }, { passive: true });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const langTextEl = document.getElementById('langText');
-      const langFlagEl = document.getElementById('langFlag');
-      const langWrap = document.getElementById('langWrap');
-
-      const langs = [
-        { code: 'en', text: 'Cooming soon', flag: 'https://flagcdn.com/w40/us.png' },
-        { code: 'pt', text: 'Novidades em breve', flag: 'https://flagcdn.com/w40/br.png' },
-        { code: 'es', text: 'Novedades próximamente', flag: 'https://flagcdn.com/w40/es.png' }
-      ];
-
-      let idx = 0;
-      let busy = false;
-      const visibleDuration = 3000;
-      const outDuration = 220;
-      const inDuration = 380;
-
-      function swapTo(i) {
-        if (busy) return;
-        busy = true;
-        langWrap.classList.add('lang-out');
-        setTimeout(() => {
-          const item = langs[i];
-          if (!item) return;
-          document.title = 'Autikids - ' + item.text + '💛';
-          langTextEl.textContent = item.text;
-          langFlagEl.src = item.flag;
-          langFlagEl.alt = item.code + ' flag';
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              langWrap.classList.remove('lang-out');
-              setTimeout(() => { busy = false; }, inDuration);
-            });
-          });
-        }, outDuration);
-      }
-
-      const initItem = langs[idx];
-      document.title = 'Autikids - ' + initItem.text + '💛';
-      langTextEl.textContent = initItem.text;
-      langFlagEl.src = initItem.flag;
-      langFlagEl.alt = initItem.code + ' flag';
-
-      setInterval(() => { idx = (idx + 1) % langs.length; swapTo(idx); }, visibleDuration);
-    })();
-  </script>
+    <div class="copyright-bar" data-i18n="footer_rights"></div>
+  </footer>
+  <script src="translation.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

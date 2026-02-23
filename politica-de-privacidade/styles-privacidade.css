@@ -1,0 +1,133 @@
+/* ========================================
+   RESET E VARIÁVEIS
+======================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary-yellow: #FFC300;
+  --bg-cream: #fce38a;
+  --text-dark: #212121;
+  --text-gray: #424242;
+  --bg-white: #FFFFFF;
+  --border-radius: 20px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.8;
+  background-color: #fce38a;
+}
+
+.spacer { width: 60px; display: none; } 
+
+/* ========================================
+   CONTEÚDO (QUADRO BRANCO)
+======================================== */
+.privacy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    
+    /* IMPORTANTE: Isso segura o botão "absolute" dentro do quadro branco */
+    position: relative; 
+}
+
+/* BOTÃO VOLTAR */
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    
+    /* No Desktop, ele flui normalmente antes do título */
+    margin-bottom: 20px; 
+}
+
+.back-btn:hover {
+    color: var(--primary-yellow);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-yellow);
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -40px; /* Compensa o espaço do botão no desktop para alinhar título */
+}
+
+.last-update {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.legal-content section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+p {
+    color: var(--text-gray);
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.privacy-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #ffc300;
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.privacy-footer p {
+    text-align: center; 
+    margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVO (MOBILE)
+======================================== */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 10px; /* Conforme seu pedido */
+        padding: 40px 20px 20px 20px; /* Mais espaço no topo para o botão */
+    }
+    
+    h1 { 
+        font-size: 2rem; 
+        margin-top: 10px;
+    }
+    
+    /* Posiciona o botão NO CANTO do quadro branco */
+    .back-btn { 
+        position: absolute; 
+        top: 20px;  /* Distância do topo do quadrado branco */
+        left: 20px; /* Distância da esquerda do quadrado branco */
+        margin: 0;
+    }
+    
+    /* Esconde o texto, mostra só a seta (conforme seu código) */
+    .back-btn span { 
+        display: none; 
+    } 
+}
