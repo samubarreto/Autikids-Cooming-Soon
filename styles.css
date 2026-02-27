@@ -1076,3 +1076,17 @@ section {
     text-align: center;
   }
 }
+.stores {
+  display: flex;
+}
+
+.store-badge {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.store-badge img {
+  height: 150px;
+  width: auto;
+}
