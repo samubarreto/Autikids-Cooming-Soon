@@ -49,7 +49,7 @@ const translations = {
     'footer_terms': 'Termos de Uso',
     'footer_privacy': 'Política de Privacidade',
     'footer_cookies': 'Política de Cookies',
-    'footer_social': 'Nossas redes sociais:',
+    'footer_social': 'Entre em contato conosco:',
     'footer_rights': `© ${currentYear} Autikids | Todos os direitos reservados`
   },
 
@@ -97,7 +97,7 @@ const translations = {
     'footer_terms': 'Terms of Use',
     'footer_privacy': 'Privacy Policy',
     'footer_cookies': 'Cookie Policy',
-    'footer_social': 'Our social networks:',
+    'footer_social': 'Contact Us:',
     'footer_rights': `© ${currentYear} Autikids | All rights reserved`
   },
 
@@ -143,7 +143,7 @@ const translations = {
     'footer_terms': 'Términos de Uso',
     'footer_privacy': 'Política de Privacidad',
     'footer_cookies': 'Política de Cookies',
-    'footer_social': 'Nuestras redes sociales:',
+    'footer_social': 'Contáctanos:',
     'footer_rights': `© ${currentYear} Autikids | Todos los derechos reservados`
   }
 };
