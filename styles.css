@@ -88,41 +88,87 @@ a:focus {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Substitua/atualize estas regras no seu styles.css */
-
-.top-flags {
-  background: #ffffff;
-  padding: 0;
-  border-bottom: 2px solid #fbd65c;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
 .language-selector {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1px 20px; /* era 5px, agora menor */
+  padding: 1px 20px;
   position: relative;
 }
 
 .top-flags .top-icon {
   position: static;
-  height: 70px;       
+  height: 70px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
   display: block;
 }
 
+/* ========================================
+   BOTÕES DO HEADER + AÇÕES
+======================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--primary-yellow);
+  color: #fff;
+  border: 2px solid var(--primary-yellow);
+  white-space: nowrap;
+}
+
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 195, 0, 0.35);
+  background: #e6b000;
+  border-color: #e6b000;
+  color: #fff;
+}
+
+.header-btn--outline {
+  background: transparent;
+  color: var(--text-dark);
+  border: 2px solid #e0e0e0;
+}
+
+.header-btn--outline:hover {
+  border-color: var(--primary-yellow);
+  color: var(--text-dark);
+  background: transparent;
+  box-shadow: 0 4px 12px rgba(255, 195, 0, 0.15);
+}
+
+/* Mobile: esconde texto, mantém só ícone */
+@media (max-width: 500px) {
+  .header-btn span {
+    display: none;
+  }
+  .header-btn {
+    padding: 8px 10px;
+  }
+}
+
 /* Mobile */
 @media (max-width: 600px) {
   .top-flags .top-icon {
-    height: 38px;    /* era 60px */
+    height: 38px;
   }
 }
 
@@ -446,10 +492,10 @@ section {
   max-width: 1100px;
   margin: 0 auto;
 }
+
 .pricing-right {
   overflow: hidden;
 }
-
 
 /* Badge "O Autkids está chegando!" */
 .coming-soon-badge {
@@ -461,7 +507,6 @@ section {
   border-radius: 8px;
   margin-bottom: 30px;
   width: fit-content;
-  /* text-align: center; */
 }
 
 .pricing-left h3 {
@@ -491,7 +536,6 @@ section {
   position: relative;
   perspective: 1000px;
   perspective-origin: center center;
-  /* min-height: 450px; */
 }
 
 .mockup-carousel {
@@ -523,52 +567,43 @@ section {
   height: 80%;
   display: block;
   border-radius: 20px;
-  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); */
   transition: all 0.4s ease;
 }
 
-/* Posições do carousel 3D circular */
-/* Centro - imagem ativa */
 .mockup-slide.center {
   transform: translate(-50%, -50%) translateZ(0) scale(1.15);
   z-index: 10;
   opacity: 1;
   filter: brightness(1.1);
-  /* box-shadow: 0 10px 10px rgba(255, 255, 255, 0.2); */
   border: 4px solid #fff;
   background-color: #FFC107;
   padding: 12px 6px;
 }
 
-/* Direita imediata */
 .mockup-slide.right-1 {
   transform: translate(-30%, -50%) translateZ(-120px) translateX(150px) rotateY(-25deg) scale(0.8);
   z-index: 8;
   opacity: 0.7;
 }
 
-/* Direita distante */
 .mockup-slide.right-2 {
   transform: translate(-10%, -50%) translateZ(-220px) translateX(270px) rotateY(-35deg) scale(0.6);
   z-index: 6;
   opacity: 0.4;
 }
 
-/* Esquerda imediata */
 .mockup-slide.left-1 {
   transform: translate(-70%, -50%) translateZ(-120px) translateX(-150px) rotateY(25deg) scale(0.8);
   z-index: 8;
   opacity: 0.7;
 }
 
-/* Esquerda distante */
 .mockup-slide.left-2 {
   transform: translate(-90%, -50%) translateZ(-220px) translateX(-270px) rotateY(35deg) scale(0.6);
   z-index: 6;
   opacity: 0.4;
 }
 
-/* Escondidas */
 .mockup-slide.hidden {
   transform: translate(-50%, -50%) translateZ(-400px) scale(0.3);
   z-index: 1;
@@ -576,13 +611,6 @@ section {
   pointer-events: none;
 }
 
-/* Hover effect */
-/* .mockup-slide:not(.center):hover {
-  transform: translate(-50%, -50%) translateZ(-100px) scale(0.95);
-  opacity: 1;
-} */
-
-/* Controles do carousel */
 .carousel-controls {
   position: absolute;
   top: 50%;
@@ -629,7 +657,6 @@ section {
   stroke: white;
 }
 
-/* Indicadores (dots) */
 .carousel-indicators {
   position: absolute;
   bottom: -50px;
@@ -691,9 +718,8 @@ section {
   will-change: transform;
 }
 
-/* Card */
 .media-card {
-  flex: 0 0 calc((100% - 48px) / 3); /* 3 visíveis no desktop */
+  flex: 0 0 calc((100% - 48px) / 3);
   min-width: 0;
 }
 
@@ -758,7 +784,6 @@ section {
   color: var(--text-dark);
 }
 
-/* Botões de navegação */
 .media-carousel-btn {
   flex-shrink: 0;
   width: 44px;
@@ -792,7 +817,6 @@ section {
   transform: none;
 }
 
-/* Dots */
 .media-carousel-dots {
   display: flex;
   justify-content: center;
@@ -817,16 +841,15 @@ section {
   border-radius: 5px;
 }
 
-/* Responsivo */
 @media (max-width: 900px) {
   .media-card {
-    flex: 0 0 calc((100% - 24px) / 2); /* 2 visíveis no tablet */
+    flex: 0 0 calc((100% - 24px) / 2);
   }
 }
 
 @media (max-width: 580px) {
   .media-card {
-    flex: 0 0 100%; /* 1 visível no mobile */
+    flex: 0 0 100%;
   }
 
   .media-carousel-track {
@@ -1116,11 +1139,6 @@ section {
     text-align: left;
   }
 
-  /* Mobile carousel adjustments */
-  /* .mockup-carousel {
-    height: 320px;
-  } */
-
   .mockup-slide {
     width: 180px;
   }
@@ -1195,18 +1213,16 @@ section {
     justify-content: center;
   }
 
-  /* .pricing-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  } */
-
   .pricing-left h3 {
     font-size: 14px;
     text-align: center;
   }
+
+  .header-actions {
+    gap: 6px;
+  }
 }
+
 .stores {
   display: flex;
 }

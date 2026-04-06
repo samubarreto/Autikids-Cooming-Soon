@@ -31,39 +31,49 @@
 
       <img src="assets/adaptive-icon.png" alt="Icon Autkids" class="top-icon" />
 
-      <div class="language-container-wrapper" style="position: relative;">
-        <button class="language-trigger" id="langTrigger">
-          <img id="currentFlag" src="assets/brasil.png" alt="Idioma atual">
-          <span id="currentLang">Português</span>
-          <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M4.5 6L8 9.5L11.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" fill="none" />
-          </svg>
-        </button>
+      <div class="header-actions">
 
-        <div class="language-dropdown" id="langDropdown">
-          <div class="language-grid">
-            <!-- Opção Português -->
-            <button class="language-option" data-lang="pt" data-name="Português">
-              <img src="assets/brasil.png" alt="Brasil">
-              <span>Português</span>
-            </button>
+        <a href="#comming-soon" class="header-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn_download_short"></span>
+        </a>
 
-            <!-- Opção Inglês -->
-            <button class="language-option" data-lang="en" data-name="English">
-              <img src="assets/eua.png" alt="Estados Unidos">
-              <span>English</span>
-            </button>
+        <a href="about-us/about_us.html" class="header-btn header-btn--outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16.5" stroke-width="3" stroke-linecap="round"/></svg>
+          <span data-i18n="nav_about"></span>
+        </a>
 
-            <!-- Opção Espanhol -->
-            <button class="language-option" data-lang="es" data-name="Español">
-              <img src="assets/espanha.png" alt="Espanha">
-              <span>Español</span>
-            </button>
+        <div class="language-container-wrapper" style="position: relative;">
+          <button class="language-trigger" id="langTrigger">
+            <img id="currentFlag" src="assets/brasil.png" alt="Idioma atual">
+            <span id="currentLang"></span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M4.5 6L8 9.5L11.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            </svg>
+          </button>
+
+          <div class="language-dropdown" id="langDropdown">
+            <div class="language-grid">
+              <button class="language-option" data-lang="pt" data-name="Português">
+                <img src="assets/brasil.png" alt="Brasil">
+                <span>Português</span>
+              </button>
+
+              <button class="language-option" data-lang="en" data-name="English">
+                <img src="assets/eua.png" alt="Estados Unidos">
+                <span>English</span>
+              </button>
+
+              <button class="language-option" data-lang="es" data-name="Español">
+                <img src="assets/espanha.png" alt="Espanha">
+                <span>Español</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </header>
 
@@ -98,7 +108,7 @@
   </header>
 
   <main>
-    <section class="why">
+    <section class="why" id="about">
       <h2 class="section-title" data-i18n="section_why"></h2>
       <div class="features">
 
@@ -184,7 +194,6 @@
             </div>
           </div>
 
-
           <!-- Indicadores -->
           <div class="carousel-indicators">
             <span class="carousel-indicator active" data-index="0"></span>
@@ -249,7 +258,6 @@
               </div>
             </div>
             <p data-i18n="media_3"></p>
-            
           </a>
         </div>
 
@@ -280,86 +288,6 @@
   <div class="media-carousel-dots"></div>
 </section>
 
-   <!--  <section class="testimonials">
-      <h2 class="section-title" data-i18n="section_testi">Veja como o Autkids está fazendo a diferença 💛</h2>
-      <div class="testimonials-carousel">
-        <div class="testi-slides">
-
-          <div class="testi-slide active">
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_1">"O app nos ajudou a estabelecer uma rotina educacional em casa. Meu
-                  filho melhorou muito."</blockquote>
-                <cite>Everton Marques</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_2">"Muitas atividades com reforço positivo — crianças adoram."</blockquote>
-                <cite>Fernanda Batista</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_3">"Ferramenta excelente para professores e familiares."</blockquote>
-                <cite>Emily Renata</cite>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-slide">
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_4">"Minha filha está se comunicando melhor a cada dia. Muito obrigada!"
-                </blockquote>
-                <cite>Maria Silva</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_5">"Interface intuitiva e cheia de recursos úteis para o dia a dia."
-                </blockquote>
-                <cite>João Santos</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_6">"Recomendo para todas as famílias. Mudou nossa vida!"</blockquote>
-                <cite>Ana Paula</cite>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-slide">
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_7">"Trabalho com autismo há 10 anos e esse é o melhor app que já vi."
-                </blockquote>
-                <cite>Dr. Carlos Mendes</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_8">"As atividades são muito bem pensadas e educativas."</blockquote>
-                <cite>Professora Juliana</cite>
-              </div>
-            </div>
-            <div class="testi">
-              <div class="testi-content">
-                <blockquote data-i18n="testi_9">"Meu neto adora usar o app todos os dias!"</blockquote>
-                <cite>Vovó Regina</cite>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-dots">
-          <span class="dot active" data-slide="0"></span>
-          <span class="dot" data-slide="1"></span>
-          <span class="dot" data-slide="2"></span>
-        </div>
-      </div>
-    </section> -->
   </main>
 
   <footer class="site-footer">
@@ -406,13 +334,13 @@
                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </a>
+              <a href="https://www.tiktok.com/@autkids.oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg width="24" height="24" viewBox="0 0 16 16" fill="#FFC107">
+               <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+               </svg>
+              </a>
             </div>
           </div>
-             <!-- <div class="stores">
-            <a href="#" class="store-badge">
-              <img src="assets/google-play.png" alt="Disponível no Google Play">
-            </a>
-          </div> -->
         </div>
 
       </div>
