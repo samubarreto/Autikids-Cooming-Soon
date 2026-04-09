@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================
       2. SELETOR DE IDIOMAS
   ============================================================ */
-  const langTrigger = document.getElementById('langTrigger');
-  const langDropdown = document.getElementById('langDropdown');
-  const currentFlag = document.getElementById('currentFlag');
-  const currentLang = document.getElementById('currentLang');
+  const langTrigger     = document.getElementById('langTrigger');
+  const langDropdown    = document.getElementById('langDropdown');
+  const currentFlag     = document.getElementById('currentFlag');
+  const currentLang     = document.getElementById('currentLang');
   const languageOptions = document.querySelectorAll('.language-option');
 
   if (langTrigger && langDropdown) {
 
     const languages = {
-      pt: { name: 'Português', flag: '../assets/brasil.png'   },
-      en: { name: 'English',   flag: '../assets/eua.png'      },
-      es: { name: 'Español',   flag: '../assets/espanha.png'  }
+      pt: { name: 'Português', flag: '../assets/brasil.png'  },
+      en: { name: 'English',   flag: '../assets/eua.png'     },
+      es: { name: 'Español',   flag: '../assets/espanha.png' }
     };
 
     function applyLanguage(lang) {
